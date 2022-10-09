@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "CodeArt (Allan Thraen)",
+  "classifications": [ "ASP.NET", "Website", "Solution", "Optimizely" ],
+  "identity": "CodeArt.Optimizely.Templates.Addon",
+  "name": "CodeArt Optimizely .NET Core CMS Addon",
+  "sourceName": "SampleOptimizelyAddon",
+  "preferNameDirectory": true,
+  "shortName": "csgaspnetweb",
+  "symbols": {
+    "title": {
+      "type": "parameter",
+      "datatype": "string",
+      "replaces": "PROJECT-TITLE",
+      "isRequired": true,
+      "description": "The display name used in assembly info and as the default website title"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "\\*\\*/.git/\\*\\*",
+            "\\*\\*/.vs/\\*\\*"
+          ]
+        }
+      ]
+    }
+  ]
+}

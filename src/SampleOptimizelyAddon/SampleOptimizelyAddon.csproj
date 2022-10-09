@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+	  <PackageId>SampleOptimizelyAddon</PackageId>
+	  <Title>Sample Optimizely Addon</Title>
+	  <Authors>CodeArt</Authors>
+	  <Company>CodeArt</Company>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/CodeArtDK/SampleOptimizelyAddon</PackageProjectUrl>
+	  <PackageIcon>icon.png</PackageIcon>
+	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	  <Description>Sample Addon for Optimizely</Description>
+	  <PackageReleaseNotes>https://example.com/releasenotes</PackageReleaseNotes>
+	  <PackageTags>Optimizely OptimizelyModulePackage ThirdPartyAddOn</PackageTags>
+	  <RepositoryUrl>https://github.com/CodeArtDK/SampleOptimizelyAddon.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="module\ClientResources\" />
+    <Folder Include="SampleOptimizelyAddon.Views\Views\" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EPiServer.CMS.AspNetCore" Version="12.5.0" />
+		<PackageReference Include="EPiServer.CMS.AspNetCore.Mvc" Version="12.5.0" />
+		<PackageReference Include="EPiServer.CMS.UI.Core" Version="12.5.0" />
+		<PackageReference Include="EPiServer.Framework" Version="12.5.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Remove="module\module.config" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="module\module.config" />
+		<None Include="msbuild\Main.proj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\..\images\icon.png">
+			<Pack>true</Pack>
+			<PackagePath>\</PackagePath>
+			<Link>icon.png</Link>
+		</None>
+	</ItemGroup>
+	
+	<Import Project="msbuild\Main.proj" />
+
+</Project>
